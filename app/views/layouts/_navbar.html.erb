@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid top-header">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+        <%= link_to "Blog" , root_path, class: "navbar-brand" %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav top-nag cl-effect-16">
+
+        <%= link_to "New Post" , new_post_path, class: "btn btn-danger" %>
+        <%= link_to "Gallery" , galleries_path, class: "btn btn-danger" %>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right cl-effect-16">
+      <% if current_user.nil? %>
+
+       <li>
+        <%= link_to new_user_session_path do %>
+          <i class="glyphicon glyphicon-log-in"></i></span> Login
+        <% end %>
+      </li>
+      
+      <% else %>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="glyphicon glyphicon-log-out"></i></span> Logout
+        <% end %>
+      </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

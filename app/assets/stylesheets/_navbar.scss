@@ -1,0 +1,64 @@
+// all to navbar
+.top-header {
+    padding: 0em 2.6em;
+    background: darkblue;
+}
+
+.navbar {
+    border: 0em;
+    border-radius: 0em;
+    margin: 0em;
+}
+
+
+.navbar-inverse .navbar-brand{
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 20px 20px;
+}
+
+
+.btn-danger {
+    color: #fff !important;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 13px;
+    margin-left: 10px;
+}
+
+
+
+.btn-danger:hover {
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 13px;
+    background-image: none !important;
+    border: 2px solid #fff;
+}
+
+
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 20px 20px;
+    background-color: darkblue;
+    display: inline-block;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+  background-color: darkblue;
+}
+
+
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: darkblue;
+}

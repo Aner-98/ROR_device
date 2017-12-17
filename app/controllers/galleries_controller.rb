@@ -1,47 +1,50 @@
-class GallerysController < ApplicationController
+class GalleriesController < ApplicationController
+
+
+  before_action :set_gallery, only:[:show, :edit, :update, :destroy]
+
+def index
+  @galleries = Gallery.all
+end
 
 def show
-  @comments = @post.postcomments
 end
 
 def new
-  @post = Post.new
+  @gallery = Gallery.new
 end
 
 def create
-  @post = current_user.posts.build(post_params)
-  if @post.save
-    redirect_to root_path
+  @gallery = Gallery.new(gallery_params)
+  if @gallery.save
+    redirect_to @gallery
   else
-    render 'new'
+    render :new
   end
 end
 
 
 def edit
-
 end
 
 def update
-
-  @post.update(post_params)
-  redirect_to root_path
+  @gallery.update(gallery_params)
+  redirect_to @gallery
 end
 
 def destroy
-
-  @post.destroy
-  redirect_to root_path
+  @gallery.destroy
+  redirect_to galleries_path
 end
 
 private
 
-def post_params
-  params.require(:post).permit(:user_id, :title, :body)
+def gallery_params
+  params.require(:gallery).permit(:title, :image)
 end
 
-def set_post
-  @post = Post.find(params[:id])
+def set_gallery
+  @gallery = Gallery.find(params[:id])
 end
 
 end

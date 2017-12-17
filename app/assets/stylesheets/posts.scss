@@ -1,0 +1,63 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.notice{
+	color: red;
+	margin: 10px 0;
+}
+
+h1 {
+	color: darkblue;
+}
+
+.inf-block {
+    margin: 10px 0;
+    color: #6e6e6e;
+    font-style: italic;
+}
+
+.comment-field {
+	margin: 10px 0;
+}
+
+
+.title a {
+  color: darkblue;
+  margin-top: 10px;
+  margin: 150px;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #cfcfcf;
+}
+
+
+.post {
+  background-color: ghostwhite;
+  padding: 20px 30px;
+  margin-left: 5%;
+  margin-bottom: 20px;
+
+}
+
+.author {
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 15px;
+}
+.date {
+    font-style: inherit;
+    font-size: smaller;
+    margin-bottom: 10px;
+}
+
+.card-text {
+  font-style: italic;
+  font-size: medium;
+  margin-bottom: 10px;
+  height: auto;
+}

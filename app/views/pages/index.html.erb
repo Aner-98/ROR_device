@@ -1,0 +1,30 @@
+<div class="row">
+<% @posts.each do |post| %>
+	<div class="col-md-5 post">
+
+
+  <div class="author">
+    <%= image_tag post.user.avatar.url, width: 60, height: 60, class: "img-circle" %>
+    Author: <%= post.user.nickname %>
+  </div>
+	<div class="title"><h1><%= link_to post.title , post_path(post.id)%></h1></div>
+	<div class="date">
+		Creeated at: <%= post.created_at %>  |
+		Updated at:  <%= post.updated_at  %>
+    ________________________________________________________________
+	</div>
+    <p class="card-text"><%= truncate(post.body.html_safe, length: 150) %></p>
+   
+
+ 	<% if current_user != nil and current_user.id == post.user_id %>
+		<%= link_to "Edit", edit_post_path(post.id) %>  |
+		<%= link_to "Delete", post_path(post.id), data: {confim: 'Are you sure?'}, method: :delete %>
+	<% end %> 
+	</div>
+
+
+<% end %>
+</div>
+
+
+	

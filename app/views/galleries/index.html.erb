@@ -1,0 +1,40 @@
+<style>
+
+  .img-show {
+    width: 330px;
+    height: 180px;
+    margin: 0 auto;
+    margin-top: 5px;
+  }
+
+</style>
+
+<%= link_to "New image" , new_gallery_path, class: "btn btn-danger" %>
+<h1><center>Галерея</center></h1>
+
+
+
+<div class="row">
+<% @galleries.each do |gallery| %>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      <h2><%= link_to gallery.title, gallery_path(gallery) %></h2>
+        <small class="sml">
+         <time><%= gallery.created_at.to_date.strftime("%d %B, %Y") %></time>
+          <% if user_signed_in? %>
+              |
+              <%= link_to 'Змінити', edit_gallery_path(gallery)  %>
+              |
+              <%= link_to 'Видалити', gallery_path(gallery), method: :delete, data: {confirm: 'Ви впевнені?'} %>
+          <% end %>
+        </small>
+      </div>
+      <div class="panel-body">
+          <div class="img-show">
+            <%= image_tag gallery.image.url(:thumb), class: 'img-show' if gallery.image? %></div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
